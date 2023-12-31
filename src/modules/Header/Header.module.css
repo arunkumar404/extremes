@@ -1,0 +1,19 @@
+.header_top_container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+.icon_links_container{
+  display: flex;
+  align-items: center;
+  gap:20px;
+}
+.header_container{
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100vw;
+  z-index: 1;
+
+}

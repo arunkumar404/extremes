@@ -1,0 +1,9 @@
+export { InstagramIcon } from "./InstagramIcon"
+export { FacebookIcon } from './FacebookIcon'
+export { TwitterIcon } from './TwitterIcon'
+export { YoutubeIcon } from './YoutubeIcon'
+export { ProfileIcon } from './ProfileIcon'
+export { CartIcon } from './CartIcon'
+export { SearchIcon } from './SearchIcon'
+export { LeftArrowIcon } from './LeftArrowIcon'
+export { RightArrowIcon } from './RightArrowIcon'
