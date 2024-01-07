@@ -1,0 +1,50 @@
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  padding-top: 6rem;
+}
+.footerListsContainer {
+  display: flex;
+  width: 100vw;
+  gap: 15rem;
+}
+.optionsItem {
+  color: #8b8a8a;
+  font-size: 1.15rem;
+}
+.optionsHeader {
+  color: #ffffff;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+.optionsColumnContainer {
+  margin-block: 6rem;
+  display: flex;
+  flex-direction: column;
+  padding-left: 6rem;
+  gap: 1.7rem;
+}
+.columnContainerTopPart {
+  display: flex;
+  flex-direction: column;
+  gap: 1.7rem;
+}
+.columnContainerBottomPart {
+  margin-top: 6rem;
+}
+.icon_links_container {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-top: 1.5rem;
+  margin-left: 0.1rem;
+}
+.footerEndNote {
+  margin-block: 2rem 7rem;
+  color: #a09e9e;
+  letter-spacing: 1px;
+  align-self: flex-start;
+  padding-left: 6rem;
+}

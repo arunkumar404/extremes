@@ -13,7 +13,7 @@ import logo from '../../common/images/logoExtreme.png'
 
 const Header = () => {
   return (
-    <div class={styles.header_container}>
+    <div className={styles.header_container}>
       <div className={styles.header_top_container}>
         <div className={styles.icon_links_container}>
           <div style={{ height: '20px', width: '20px' }}>

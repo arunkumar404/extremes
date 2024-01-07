@@ -1,0 +1,40 @@
+.specialSaleCard{
+  height:750px;
+  display: grid;
+  place-items: center;
+  color:#ffffff;
+
+}
+
+.subMessage{
+  letter-spacing: 2px;
+}
+
+.subMain{
+  font-size: 70px;
+  margin-top: .2rem;
+}
+.messagesPart{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.shop_btn {
+  margin-top: 3rem;
+  background-color: black;
+  color: white;
+  border: none;
+  width: 260px;
+  box-shadow: 0 3px 14px var(--btn-shadow), 0 2px 4px var(--btn-shadow);
+  font-size: 14px;
+  height: 50px;
+  padding: 16px 22px;
+  box-sizing: border-box;
+  letter-spacing: 2px;
+  transition: color 0.25s ease-out 0s;
+}
+.shop_btn:hover {
+  color: #8b8989;
+}

@@ -1,0 +1,22 @@
+.app {
+  position: relative;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+.app::-webkit-scrollbar {
+  display: none;
+}
+.app {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+}
+.specialSaleContainer{
+  display: flex;
+  flex-direction: column;
+}
+.btnsContainer{
+  display: flex;
+  align-items: center;
+  gap:2rem;
+}
