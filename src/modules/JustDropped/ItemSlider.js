@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import item1 from '../../common/images/men_item_1.webp'
 import styles from './JustDropped.module.css'
-import { AddIcon } from '../../common/icons'
 
 const ItemSlider = ({ item }) => {
   const [showQuickAdd, setShowQuickAdd] = useState(false)

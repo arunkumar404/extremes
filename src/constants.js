@@ -1,6 +1,7 @@
 import item1 from './common/images/men_item_1.webp'
 import bgImg1 from './common/images/bg_img_1.jpg'
 import bgImg2 from './common/images/bg_img_2.jpg'
+import { FacebookIcon, InstagramIcon, TwitterIcon, YoutubeIcon } from './common/icons'
 
 export const genderOptions = ['Men', 'Women']
 
@@ -54,4 +55,23 @@ export const moreFooterOptions = [
   'Blog',
   'About',
   'Affiliate Program',
+]
+
+export const socialItems = [
+  {
+    icon: <InstagramIcon />,
+    link: 'https://www.instagram.com/',
+  },
+  {
+    icon: <FacebookIcon />,
+    link: 'https://www.facebook.com/',
+  },
+  {
+    icon: <TwitterIcon />,
+    link: 'https://twitter.com/?lang=en',
+  },
+  {
+    icon: <YoutubeIcon />,
+    link: 'https://www.youtube.com/',
+  },
 ]

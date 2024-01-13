@@ -1,0 +1,16 @@
+.loginPageContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 80vh;
+}
+.labelText{
+  letter-spacing: 2px !important;
+  font-weight: 600 !important;
+}
+.inputsContainer{
+  display: flex;
+  flex-direction: column;
+  gap:2rem;
+}

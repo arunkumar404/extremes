@@ -16,7 +16,7 @@ import {
 const Footer = () => {
   return (
     <div className={styles.footerContainer}>
-      <img
+      {/* <img
         src={logo}
         alt='logo'
         style={{
@@ -24,7 +24,7 @@ const Footer = () => {
           maxHeight: '35px',
           cursor: 'pointer',
         }}
-      />
+      /> */}
       <div className={styles.footerListsContainer}>
         <div className={styles.optionsColumnContainer}>
           <p className={styles.optionsHeader}>COLLECTIONS</p>
