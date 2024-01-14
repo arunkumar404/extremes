@@ -11,7 +11,7 @@ const GenderTab = () => {
           <button
             onClick={() => setSelectedGender(item)}
             key={i}
-            className={selectedGender === item && styles.activeTab}
+            className={selectedGender === item ? styles.activeTab : ''}
           >
             {item}
           </button>

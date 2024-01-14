@@ -5,10 +5,10 @@ import styles from '../App.module.css'
 import { specialSaleCards } from '../constants'
 import SpecialSaleCard from '../modules/SpecialSaleCard/SpecialSaleCard'
 
-const HeroMainContainer = () => {
+const HeroMainContainer = ({ setIsScrolled }) => {
   return (
     <>
-      <MainHeroPage />
+      <MainHeroPage setIsScrolled={setIsScrolled} />
       <JustDropped />
       <div className={styles.specialSaleContainer}>
         {specialSaleCards.map((item, i) => {

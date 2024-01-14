@@ -12,7 +12,7 @@ const JustDropped = () => {
       <GenderTab />
       <div className={styles.slider_items_container}>
         {just_dropped_items.map( ( item, i ) => {
-          return <ItemSlider item={item} />
+          return <ItemSlider key={i} item={item} />
         })}
       </div>
     </div>

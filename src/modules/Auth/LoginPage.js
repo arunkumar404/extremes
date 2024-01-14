@@ -54,7 +54,7 @@ const LoginPage = () => {
   }))
 
   return (
-    <Box className='loginPageContainer'>
+    <Box pb={'10rem'} className='loginPageContainer'>
       <Typography variant='h4' mt={10}>
         LOGIN
       </Typography>
@@ -91,7 +91,6 @@ const LoginPage = () => {
               id='email-input'
               onChange={(e) => setPassword(e.target.value)}
             />
-            <BootstrapInput defaultValue='' id='email-input' />
           </FormControl>
         </Box>
         <Button

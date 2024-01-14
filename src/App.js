@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router-dom'
 import HeroMainContainer from './containers/HeroMainContainer'
 import LoginPage from './modules/Auth/LoginPage'
 import SignupPage from './modules/Auth/SignupPage'
+import Collections from './modules/Collections/Collections'
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -27,9 +28,10 @@ function App() {
     <div className={styles.app}>
       <Header isScrolled={isScrolled} setIsScrolled={setIsScrolled} />
       <Routes>
-        <Route path='/' element={<HeroMainContainer />} />
+        <Route path='/' element={<HeroMainContainer setIsScrolled={setIsScrolled} />} />
         <Route path='/login' element={<LoginPage />} />
         <Route path='/signup' element={<SignupPage />} />
+        <Route path='/collections/:category' element={<Collections />} />
       </Routes>
       <Footer />
     </div>

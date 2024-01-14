@@ -1,27 +1,31 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './MainHeroPage.module.css'
 import bg_img_1 from '../../common/images/bg_img_1.jpg'
 import bg_img_2 from '../../common/images/bg_img_2.jpg'
 
 import { LeftArrowIcon, RightArrowIcon } from '../../common/icons'
+import { useNavigate } from 'react-router-dom'
 
-const MainHeroPage = () => {
+const MainHeroPage = ({ setIsScrolled }) => {
   const [current, setCurrent] = useState(1)
-
+  const navigate = useNavigate()
   const heroData = [
     {
       itemId: 1,
       image: bg_img_1,
       smallHeader: 'READY-TO-WEAR',
       largeHeader: 'All Blvck Everything',
-      buttons: ['SHOP MEN', 'SHOP WOMEN'],
+      buttons: [
+        { btn: 'SHOP MEN', link: '/collections/men' },
+        { btn: 'SHOP WOMEN', link: '/collections/women' },
+      ],
     },
     {
       itemId: 2,
       image: bg_img_2,
       smallHeader: 'BLVCK HOME',
       largeHeader: 'Bring the lifestyle home.',
-      buttons: ['SHOP THE COLLECTION'],
+      buttons: [{ btn: 'SHOP THE COLLECTION', link: '/collections/home' }],
     },
   ]
 
@@ -44,6 +48,10 @@ const MainHeroPage = () => {
           : 2)
     )
   }
+
+  useEffect(() => {
+    setIsScrolled(false)
+  }, [])
 
   return (
     <div
@@ -79,7 +87,17 @@ const MainHeroPage = () => {
             </div>
             <div className={styles.btn_container}>
               {getItem(position).buttons.map((btnName, i) => {
-                return <button className={styles.shop_btn}>SHOP MEN</button>
+                return (
+                  <button
+                    key={i}
+                    className={styles.shop_btn}
+                    onClick={() => {
+                      navigate(btnName.link)
+                    }}
+                  >
+                    {btnName.btn}
+                  </button>
+                )
               })}
             </div>
           </div>

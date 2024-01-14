@@ -51,7 +51,7 @@ const SignupPage = () => {
   }))
 
   return (
-    <Box className='loginPageContainer'>
+    <Box mt={1} pb={'6rem'} className='loginPageContainer'>
       <Typography variant='h4' mt={10}>
         CREATE ACCOUNT
       </Typography>
