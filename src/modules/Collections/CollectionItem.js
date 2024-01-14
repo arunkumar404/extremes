@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
+import styles from './Collections.module.css'
 import item1 from '../../common/images/men_item_1.webp'
-import styles from './JustDropped.module.css'
 
-const ItemSlider = ({ item }) => {
-  const [showQuickAdd, setShowQuickAdd] = useState(false)
+const CollectionItem = ( { item } ) => {
+    const [showQuickAdd, setShowQuickAdd] = useState(false)
 
   return (
     <div className={styles.itemContainer}>
@@ -32,4 +32,4 @@ const ItemSlider = ({ item }) => {
   )
 }
 
-export default ItemSlider
+export default CollectionItem

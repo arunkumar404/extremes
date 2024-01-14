@@ -35,3 +35,64 @@
   width: 8px;
   height: 15px;
 }
+.collectionItemsContainer{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap:2px;
+  margin-block: 1px;
+}
+.itemContainer {
+  min-width: 450px;
+  height: 600px;
+  background-color: #b6b6b6;
+  position:relative;
+}
+.imageNAdd{
+  position: relative;
+  overflow: hidden;
+}
+.itemImages {
+  width: 100%;
+}
+.slidingQuickAdd{
+  position: absolute;
+  right: 0;
+  bottom:0;
+  background-color: #fffefe;
+  width:100%;
+  color: #6e6e6e;
+  text-align: center;
+  padding-block: .9rem;
+  opacity: .85;
+  font-size: 9px;
+  letter-spacing: 1px;
+  transform: translateY(101%);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.showQuickAdd{
+    transform: translateY(0%);
+
+}
+.itemName {
+  text-align: center;
+  font-size: 20px;
+  margin-top: .7rem;
+  color: #3f3e3e;
+}
+.itemPrice {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 1.2rem;
+  color: #3f3e3e;
+}
+.newTag{
+  position: absolute;
+  top:5px;
+  left:5px;
+  background-color: #686767;
+  color: #c2c0c0;
+  padding: .6rem 1rem;
+  font-size: 10px;
+  letter-spacing: 1px;
+}

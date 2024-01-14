@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './Collections.module.css'
 import bg_img_2 from '../../common/images/bg_img_2.jpg'
 import { useParams } from 'react-router-dom'
 import { FilterIcon, RightArrowIcon } from '../../common/icons'
+import { collectionItems, just_dropped_items } from '../../constants'
+import CollectionItem from './CollectionItem'
 
 const Collections = () => {
   const { category } = useParams()
@@ -36,6 +38,12 @@ const Collections = () => {
             <RightArrowIcon />
           </div>
         </div>
+      </div>
+
+      <div className={styles.collectionItemsContainer}>
+        {collectionItems.map((item, i) => {
+          return <CollectionItem item={item} key={i} />
+        })}
       </div>
     </div>
   )
