@@ -1,10 +1,37 @@
-.topBgPic{
+.topBgPic {
   display: flex;
   flex: 1;
   align-items: center;
   justify-content: center;
+  min-height: 500px;
 }
-.topHeaderText{
+.topHeaderText {
   font-size: 2rem;
   color: #ffffff;
+}
+.filterNsort {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000000;
+  border-block: 1px solid #5a5959;
+}
+.btnIconContainer {
+  display: flex;
+  gap: .3rem;
+  align-items: center;
+  padding-block: 1.3rem;
+  padding-inline: 1rem;
+}
+.btnIconContainer button {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+.iconDiv {
+  display: flex;
+  justify-content: center;
+  width: 8px;
+  height: 15px;
 }
