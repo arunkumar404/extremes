@@ -8,12 +8,6 @@ import { useNavigate, useLocation } from 'react-router-dom'
 const Header = ({ isScrolled, setIsScrolled }) => {
   const navigate = useNavigate()
   const location = useLocation()
-  console.log(
-    (location.pathname !== '/login' &&
-      location.pathname !== '/signup' &&
-      isScrolled) ||
-      location.pathname === '/login'
-  )
   return (
     <div
       className={`${styles.header_container} ${
