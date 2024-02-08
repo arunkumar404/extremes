@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import styles from './Collections.module.css'
 import item1 from '../../common/images/men_item_1.webp'
+import { LeftLongArrowIcon } from '../../common/icons/LeftLongArrowIcon'
 
-const CollectionItem = ( { item } ) => {
-    const [showQuickAdd, setShowQuickAdd] = useState(false)
+const CollectionItem = ({ item }) => {
+  const [showQuickAdd, setShowQuickAdd] = useState(false)
+  const [showSizeRise, setShowSizeRise] = useState(false)
 
   return (
     <div className={styles.itemContainer}>
@@ -15,15 +17,55 @@ const CollectionItem = ( { item } ) => {
           onMouseLeave={() => setShowQuickAdd(false)}
           onMouseEnter={() => setShowQuickAdd(true)}
         />
-        <p
-          className={`${styles.slidingQuickAdd} ${
-            showQuickAdd && styles.showQuickAdd
-          }`}
-          onMouseEnter={() => setShowQuickAdd(true)}
-          onMouseLeave={() => setShowQuickAdd(false)}
-        >
-          QUICK ADD
-        </p>
+        {showQuickAdd && (
+          <p
+            className={`${styles.slidingQuickAdd} ${
+              showQuickAdd && styles.showQuickAdd
+            }`}
+            onMouseEnter={() => setShowQuickAdd(true)}
+            onMouseLeave={() => setShowQuickAdd(false)}
+            onClick={() => {
+              setShowSizeRise(true)
+              setShowQuickAdd(false)
+            }}
+          >
+            QUICK ADD
+          </p>
+        )}
+        {showSizeRise && (
+          <div
+            className={`${styles.slidingQuickAdd} ${
+              showSizeRise && styles.showQuickAdd
+            } ${showSizeRise && styles.sizeContainerParent}`}
+          >
+            <div className={styles.sizeContainer}>
+              <div onClick={() => setShowSizeRise(false)}>
+                <LeftLongArrowIcon color='#000000' width={20} height={20} />
+              </div>
+              <p
+                className={styles.selectPart}
+                onMouseEnter={() => setShowQuickAdd(true)}
+                onMouseLeave={() => setShowQuickAdd(false)}
+                onClick={() => setShowSizeRise(true)}
+              >
+                SELECT SIZE
+              </p>
+            </div>
+            <div className={styles.sizesActualContainer}>
+              {['XL', 'S', 'M', 'L', 'XL', '2XL', '3XL'].map((item, i) => {
+                return (
+                  <span
+                    className={styles.sizeSpan}
+                    key={i}
+                    onClick={() => console.log('add to cart')}
+                  >
+                    {item}
+                  </span>
+                )
+              })}
+            </div>
+          </div>
+        )}
       </div>
       <p className={styles.itemName}>Blvck Gradient Hoodie</p>
       <p className={styles.itemPrice}>Rs.11200.00</p>
