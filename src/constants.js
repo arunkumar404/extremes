@@ -14,14 +14,14 @@ export const just_dropped_items = [
 
 
 export const collectionItems = [
-  { name: 'Blvck Gradient Hoodie', price: 'Rs.11200.00', image: item1 },
-  { name: 'Blvck Gradient Hoodie', price: 'Rs.11200.00', image: item1 },
-  { name: 'Blvck Gradient Hoodie', price: 'Rs.11200.00', image: item1 },
-  { name: 'Blvck Gradient Hoodie', price: 'Rs.11200.00', image: item1 },
-  { name: 'Blvck Gradient Hoodie', price: 'Rs.11200.00', image: item1 },
-  { name: 'Blvck Gradient Hoodie', price: 'Rs.11200.00', image: item1 },
-  { name: 'Blvck Gradient Hoodie', price: 'Rs.11200.00', image: item1 },
-  { name: 'Blvck Gradient Hoodie', price: 'Rs.11200.00', image: item1 },
+  { id:1, name: 'Blvck Gradient Hoodie', price: 'Rs.11200.00', image: item1 },
+  { id:2,name: 'Blvck Gradient Hoodie', price: 'Rs.11200.00', image: item1 },
+  { id:3,name: 'Blvck Gradient Hoodie', price: 'Rs.11200.00', image: item1 },
+  { id:4,name: 'Blvck Gradient Hoodie', price: 'Rs.11200.00', image: item1 },
+  { id:5,name: 'Blvck Gradient Hoodie', price: 'Rs.11200.00', image: item1 },
+  { id:6,name: 'Blvck Gradient Hoodie', price: 'Rs.11200.00', image: item1 },
+  { id:7,name: 'Blvck Gradient Hoodie', price: 'Rs.11200.00', image: item1 },
+  { id:8,name: 'Blvck Gradient Hoodie', price: 'Rs.11200.00', image: item1 },
 ]
 export const specialSaleCards = [
   {

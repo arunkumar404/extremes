@@ -7,6 +7,8 @@ import HeroMainContainer from './containers/HeroMainContainer'
 import LoginPage from './modules/Auth/LoginPage'
 import SignupPage from './modules/Auth/SignupPage'
 import Collections from './modules/Collections/Collections'
+import { ContextProvider } from './context'
+import { Button } from './components/ui/button'
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -26,14 +28,19 @@ function App() {
 
   return (
     <div className={styles.app}>
-      <Header isScrolled={isScrolled} setIsScrolled={setIsScrolled} />
-      <Routes>
-        <Route path='/' element={<HeroMainContainer setIsScrolled={setIsScrolled} />} />
-        <Route path='/login' element={<LoginPage />} />
-        <Route path='/signup' element={<SignupPage />} />
-        <Route path='/collections/:category' element={<Collections />} />
-      </Routes>
-      <Footer />
+      <ContextProvider>
+        <Header isScrolled={isScrolled} setIsScrolled={setIsScrolled} />
+        <Routes>
+          <Route
+            path='/'
+            element={<HeroMainContainer setIsScrolled={setIsScrolled} />}
+          />
+          <Route path='/login' element={<LoginPage />} />
+          <Route path='/signup' element={<SignupPage />} />
+          <Route path='/collections/:category' element={<Collections />} />
+        </Routes>
+        <Footer />
+      </ContextProvider>
     </div>
   )
 }

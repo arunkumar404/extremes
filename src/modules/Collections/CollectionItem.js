@@ -2,10 +2,13 @@ import React, { useState } from 'react'
 import styles from './Collections.module.css'
 import item1 from '../../common/images/men_item_1.webp'
 import { LeftLongArrowIcon } from '../../common/icons/LeftLongArrowIcon'
+import { useAppContext } from '../../context'
 
-const CollectionItem = ({ item }) => {
+const CollectionItem = ({ buyingItem }) => {
   const [showQuickAdd, setShowQuickAdd] = useState(false)
   const [showSizeRise, setShowSizeRise] = useState(false)
+
+  const { setCartItems } = useAppContext()
 
   return (
     <div className={styles.itemContainer}>
@@ -52,14 +55,24 @@ const CollectionItem = ({ item }) => {
               </p>
             </div>
             <div className={styles.sizesActualContainer}>
-              {['XL', 'S', 'M', 'L', 'XL', '2XL', '3XL'].map((item, i) => {
+              {['XL', 'S', 'M', 'L', 'XL', '2XL', '3XL'].map((itemSize, i) => {
                 return (
                   <span
                     className={styles.sizeSpan}
                     key={i}
-                    onClick={() => console.log('add to cart')}
+                    onClick={() => {
+                      setCartItems((prev) => [
+                        ...prev,
+                        {
+                          id: buyingItem?.id,
+                          name: buyingItem?.name,
+                          size: itemSize,
+                        },
+                      ])
+                      setShowSizeRise(false)
+                    }}
                   >
-                    {item}
+                    {itemSize}
                   </span>
                 )
               })}

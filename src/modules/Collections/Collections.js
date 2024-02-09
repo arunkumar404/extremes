@@ -42,7 +42,7 @@ const Collections = () => {
 
       <div className={styles.collectionItemsContainer}>
         {collectionItems.map((item, i) => {
-          return <CollectionItem item={item} key={i} />
+          return <CollectionItem buyingItem={item} key={i} />
         })}
       </div>
     </div>
