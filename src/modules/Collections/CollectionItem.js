@@ -14,8 +14,8 @@ const CollectionItem = ({ buyingItem }) => {
     <div className={styles.itemContainer}>
       <div className={styles.imageNAdd}>
         <img
-          src={item1}
-          alt='item1'
+          src={buyingItem?.image}
+          alt={buyingItem?.name}
           className={styles.itemImages}
           onMouseLeave={() => setShowQuickAdd(false)}
           onMouseEnter={() => setShowQuickAdd(true)}
@@ -67,9 +67,9 @@ const CollectionItem = ({ buyingItem }) => {
                           id: buyingItem?.id,
                           name: buyingItem?.name,
                           size: itemSize,
-                          img: item1,
-                          pricePerPiece: '20,000.00',
-                          count:1
+                          img: buyingItem?.image,
+                          pricePerPiece: buyingItem?.price,
+                          count: 1,
                         },
                       ])
                       setShowSizeRise(false)
@@ -83,8 +83,8 @@ const CollectionItem = ({ buyingItem }) => {
           </div>
         )}
       </div>
-      <p className={styles.itemName}>Blvck Gradient Hoodie</p>
-      <p className={styles.itemPrice}>Rs.11200.00</p>
+      <p className={styles.itemName}>{buyingItem?.name}</p>
+      <p className={styles.itemPrice}>{buyingItem?.price}</p>
       <p className={styles.newTag}>NEW</p>
     </div>
   )

@@ -14,7 +14,7 @@ import item1 from './common/images/men_item_1.webp'
 function App() {
   const [isScrolled, setIsScrolled] = useState(false)
 
-  const { showCart, setShowCart, cartItems } = useAppContext()
+  const { showCart, setShowCart, cartItems, setCartItems } = useAppContext()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,6 +29,26 @@ function App() {
     }
   }, [])
 
+  const removeFromCart = (itemId) => {
+    const updatedCartItems = cartItems.filter((item) => item.id !== itemId)
+    setCartItems(updatedCartItems)
+  }
+
+  const increaseItemCount = (itemId) => {
+    const updatedCartItems = cartItems.map((item) =>
+      item.id === itemId ? { ...item, count: item.count + 1 } : item
+    )
+    setCartItems(updatedCartItems)
+  }
+
+  const decreaseItemCount = (itemId) => {
+    const updatedCartItems = cartItems.map((item) =>
+      item.id === itemId && item.count > 1
+        ? { ...item, count: item.count - 1 }
+        : item
+    )
+    setCartItems(updatedCartItems)
+  }
   return (
     <>
       <style>
@@ -63,9 +83,12 @@ function App() {
                   </div>
                 </div>
                 <div className='flex flex-col'>
-                  {cartItems?.map((item, i) => {
+                  {cartItems?.map((item) => {
                     return (
-                      <div className='flex p-5 gap-2 justify-between w-full border-b-2'>
+                      <div
+                        key={item?.id}
+                        className='flex p-5 gap-2 justify-between w-full border-b-2'
+                      >
                         <img src={item?.img} alt='imgg1' className='max-h-20' />
                         <div className=''>
                           <p>{item?.name}</p>
@@ -77,12 +100,32 @@ function App() {
                           </p>
 
                           <div className='flex items-center border border-[#b5b5b5] border-solid w-fit justify-between mt-4'>
-                            <p className='py-2 px-3  text-xs'>-</p>
+                            <p
+                              className='py-2 px-3  text-xs cursor-pointer'
+                              onClick={() => decreaseItemCount(item.id)}
+                              v
+                            >
+                              -
+                            </p>
                             <p className='py-2 px-3 text-xs'>{item?.count}</p>
-                            <p className='py-2 px-3  text-xs'>+</p>
+                            <p
+                              className='py-2 px-3  text-xs cursor-pointer'
+                              onClick={() => increaseItemCount(item.id)}
+                            >
+                              +
+                            </p>
                           </div>
                         </div>
-                        <CloseIcon style={{ width: '18px', height: '18px' }} />
+                        <div
+                          className='cursor-pointer'
+                          onClick={() => {
+                            removeFromCart(item?.id)
+                          }}
+                        >
+                          <CloseIcon
+                            style={{ width: '18px', height: '18px' }}
+                          />
+                        </div>
                       </div>
                     )
                   })}
