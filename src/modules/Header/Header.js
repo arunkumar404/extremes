@@ -4,10 +4,14 @@ import { ProfileIcon, SearchIcon, CartIcon } from '../../common/icons'
 import logo from '../../common/images/logoExtreme.png'
 import { socialItems } from '../../constants'
 import { useNavigate, useLocation } from 'react-router-dom'
+import { useAppContext } from '../../context'
 
 const Header = ({ isScrolled, setIsScrolled }) => {
   const navigate = useNavigate()
   const location = useLocation()
+
+  const { setShowCart, showCart } = useAppContext()
+
   return (
     <div
       className={`${styles.header_container} ${
@@ -59,7 +63,9 @@ const Header = ({ isScrolled, setIsScrolled }) => {
           <div style={{ height: '20px', width: '20px', cursor: 'pointer' }}>
             <SearchIcon />
           </div>
-          <div style={{ height: '20px', width: '20px', cursor: 'pointer' }}>
+          <div style={{ height: '20px', width: '20px', cursor: 'pointer' }} onClick={() => {
+            setShowCart(!showCart)
+          }}>
             <CartIcon />
           </div>
         </div>

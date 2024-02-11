@@ -1,13 +1,14 @@
 import * as React from "react"
 import { Drawer as DrawerPrimitive } from "vaul"
 
-import { cn } from "../../lib/utils"
+import { cn } from "../..//lib/utils"
 
-const Drawer = ({
-  shouldScaleBackground = true,
-  ...props
-}) => (
-  <DrawerPrimitive.Root shouldScaleBackground={shouldScaleBackground} {...props} />
+const Drawer = ({ shouldScaleBackground = true, ...props }) => (
+  <DrawerPrimitive.Root
+    shouldScaleBackground={shouldScaleBackground}
+    direction='right'
+    {...props}
+  />
 )
 Drawer.displayName = "Drawer"
 
@@ -25,22 +26,24 @@ const DrawerOverlay = React.forwardRef(({ className, ...props }, ref) => (
 ))
 DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName
 
-const DrawerContent = React.forwardRef(({ className, children, ...props }, ref) => (
-  <DrawerPortal>
-    <DrawerOverlay />
-    <DrawerPrimitive.Content
-      ref={ref}
-      className={cn(
-        "fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950",
-        className
-      )}
-      {...props}>
-      <div
-        className="mx-auto mt-4 h-2 w-[100px] rounded-full bg-slate-100 dark:bg-slate-800" />
-      {children}
-    </DrawerPrimitive.Content>
-  </DrawerPortal>
-))
+const DrawerContent = React.forwardRef(
+  ({ className, children, ...props }, ref) => (
+    <DrawerPortal>
+      <DrawerOverlay />
+      <DrawerPrimitive.Content
+        ref={ref}
+        className={cn(
+          'fixed inset-x-[79.5%] top-0 h-full max-w-[360px] right-0 z-50 flex flex-col rounded-t-[2px] border bg-background',
+          className
+        )}
+      style={{}}
+        {...props}
+      >
+        {children}
+      </DrawerPrimitive.Content>
+    </DrawerPortal>
+  )
+)
 DrawerContent.displayName = "DrawerContent"
 
 const DrawerHeader = ({
@@ -72,7 +75,7 @@ DrawerTitle.displayName = DrawerPrimitive.Title.displayName
 const DrawerDescription = React.forwardRef(({ className, ...props }, ref) => (
   <DrawerPrimitive.Description
     ref={ref}
-    className={cn("text-sm text-slate-500 dark:text-slate-400", className)}
+    className={cn("text-sm text-muted-foreground", className)}
     {...props} />
 ))
 DrawerDescription.displayName = DrawerPrimitive.Description.displayName

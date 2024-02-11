@@ -67,6 +67,9 @@ const CollectionItem = ({ buyingItem }) => {
                           id: buyingItem?.id,
                           name: buyingItem?.name,
                           size: itemSize,
+                          img: item1,
+                          pricePerPiece: '20,000.00',
+                          count:1
                         },
                       ])
                       setShowSizeRise(false)
