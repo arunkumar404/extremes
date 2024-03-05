@@ -46,6 +46,7 @@
   height: 600px;
   background-color: #b6b6b6;
   position:relative;
+  cursor: pointer;
 }
 .imageNAdd{
   position: relative;

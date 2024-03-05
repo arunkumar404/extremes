@@ -3,15 +3,26 @@ import styles from './Collections.module.css'
 import item1 from '../../common/images/men_item_1.webp'
 import { LeftLongArrowIcon } from '../../common/icons/LeftLongArrowIcon'
 import { useAppContext } from '../../context'
+import { useNavigate } from 'react-router-dom'
 
 const CollectionItem = ({ buyingItem }) => {
   const [showQuickAdd, setShowQuickAdd] = useState(false)
   const [showSizeRise, setShowSizeRise] = useState(false)
-
+  const navigate = useNavigate()
   const { setCartItems } = useAppContext()
-
+  console.log(buyingItem)
   return (
-    <div className={styles.itemContainer}>
+    <div
+      className={styles.itemContainer}
+      onClick={() =>
+        navigate(
+          `/collections/men/products/${buyingItem.name
+            .toLowerCase()
+            .split(' ')
+            .join('-')}?id=${buyingItem.id}`
+        )
+      }
+    >
       <div className={styles.imageNAdd}>
         <img
           src={buyingItem?.image}

@@ -9,7 +9,7 @@ import Collections from './modules/Collections/Collections'
 import { useAppContext } from './context'
 import { Drawer, DrawerContent } from './components/ui/drawer'
 import CloseIcon from '@mui/icons-material/Close'
-import item1 from './common/images/men_item_1.webp'
+// import item1 from './common/images/men_item_1.webp'
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -29,6 +29,9 @@ function App() {
     }
   }, [])
 
+  useEffect( () => {
+    setShowCart(false)
+  },[setShowCart])
   const removeFromCart = (itemId) => {
     const updatedCartItems = cartItems.filter((item) => item.id !== itemId)
     setCartItems(updatedCartItems)
@@ -66,7 +69,9 @@ function App() {
           />
           <Route path='/login' element={<LoginPage />} />
           <Route path='/signup' element={<SignupPage />} />
-          <Route path='/collections/:category' element={<Collections />} />
+          <Route path='/collections/:category' element={<Collections />}>
+            <Route path='products/:productName' element={<Collections />} />
+          </Route>
         </Routes>
         <Footer />
         <Drawer open={showCart} onOpenChange={(value) => setShowCart(value)}>
